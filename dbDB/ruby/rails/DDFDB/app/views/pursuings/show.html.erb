@@ -1,0 +1,27 @@
+<!-- View pursuing information -->
+<h1>Pursuing Information</h1>
+<br>
+<table border="3" cellpadding="10">
+	<tr>
+		<td><strong>Username: </strong> <%= @pursuing.username %></td>
+	</tr>
+	<tr><td><strong>Person ID Associated:</strong> <%= @pursuing.password %></td>
+	</tr>
+</table>
+<!-- Edit button -->
+<div style="float:left;">
+	<%= button_to "Edit", edit_pursuing_path(@pursuing), :method => :get %>
+</div>
+<!-- Delete button -->
+<div style="float:left;">
+	<%= button_to "Delete", @pursuing, :confirm => "Are you sure you want to delete this pursuing entry?", :method => :delete%>
+</div>
+</p>
+<!-- Reset formatting -->
+<div style="clear:both;">
+</div>
+<!-- Back button -->
+<div class="btn.btn-small">
+	<a href='/pursuings/'>
+		<button class="btn.btn-small">Back To Pursuing Main Page</button>
+	</div>

@@ -1,0 +1,14 @@
+<!-- Update information for communication page -->
+<h1>Update Information For a Communication</h1>
+<!-- Inputs for the attributes -->
+<%= form_for @communication do |p| %>
+Communication ID: <%= p.text_field :communicationID %><br />
+Content: <%= p.text_field :content %><br />
+Theme: <%= p.text_field :theme %><br />
+<%= p.submit "Update Information For The Communication", :class => "button", :onclick => "alert('Success!')" %>
+<% end -%>
+<!-- Button to go back to the people main page -->
+<div class="btn-group">
+	<a href='/communications/'>
+  <button class="btn">Back to Communications</button>
+</div>

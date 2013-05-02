@@ -1,0 +1,14 @@
+<!-- Add new Pursuing page -->
+<h1>Add a Pursuing Case</h1>
+<!-- Inputs for the attributes -->
+<%= form_for @pursuing do |p| %>
+User:<%= p.text_field :username %><br />
+Person ID:<%= p.text_field :personID %><br />
+<!-- Create new pursuing pop up button to indicate success -->
+<%= p.submit %>
+<% end -%>
+<!-- Button to go back to the pursuing main page -->
+<div class="btn.btn-small">
+	<a href='/pursuings/'>
+  <button class="btn.btn-small">Back To Pursuing Cases</button>
+

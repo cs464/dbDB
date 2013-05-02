@@ -1,0 +1,14 @@
+<!-- Add new user page -->
+<h1>Add a New User</h1>
+<!-- Inputs for the attributes -->
+<%= form_for @user do |p| %>
+User:<%= p.text_field :username %><br />
+Password Hash:<%= p.text_field :password_hash %><br />
+<!-- Create new user pop up button to indicate success -->
+<%= p.submit "Create New User", :class => "button", :onclick => "alert('Success!')" %>
+<% end -%>
+<!-- Button to go back to the users main page -->
+<div class="btn.btn-small">
+	<a href='/users/'>
+		<button class="btn.btn-small">Back To Users</button>
+

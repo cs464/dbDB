@@ -1,0 +1,207 @@
+Pre Indices:
+
+1.
+UPDATE Interest
+SET name="Hot Yoga"
+WHERE name="Yoga";
+
+Query took 0.0275 sec
+
+2.
+UPDATE Person
+SET compatibility=compatibility-1
+WHERE compatibility>0;
+
+Query took 0.1515 sec
+
+3.
+DELETE
+FROM Person
+WHERE politics="Apathetic";
+
+Query took 0.0386 sec
+
+
+4.
+DELETE 
+FROM Interaction
+WHERE (DATEDIFF(CURRENT_TIMESTAMP,date_time)>360);
+
+Query took 0.0416 sec 
+
+5.
+INSERT INTO Info(factoid,personID)
+SELECT "can touch their toes", Interest.personID
+FROM Interest
+WHERE Interest.name = "Yoga" OR Interest.name="Hot Yoga";
+
+Query took 0.0354 sec
+
+
+6.
+INSERT INTO Interest(name,details,personID)
+SELECT "taxes","they are against it", personID
+FROM Person
+WHERE politics = "Libertarian" OR politics = "Republican";
+
+Query took 0.0632 sec
+
+7. 
+SELECT DISTINCT(name) AS wellknown
+FROM Person 
+WHERE personID IN 
+	(SELECT personID 
+	FROM
+		(SELECT Interaction.personID,COUNT(*) AS intct 
+		FROM Interaction 
+		GROUP BY Interaction.personID)AS datecount 
+	WHERE intct>1 
+	UNION 
+	SELECT personID 
+	FROM
+		(SELECT Info.personID,COUNT(*) AS infct 
+		FROM Info 
+		GROUP BY Info.personID)AS infocount 
+	WHERE infct>1)
+;
+
+Query took 0.2390 sec
+
+8.
+SELECT dates,WEEKDAY(day) 
+FROM 
+	(SELECT date_time AS day,COUNT(*) AS dates 
+	FROM Interaction 
+	GROUP BY WEEKDAY(date_time))AS datecount;
+
+Query took 0.0143 sec
+
+
+9. 
+SELECT name,compatibility,COUNT(*) as numDates 
+FROM Person JOIN Interaction ON Person.personID = Interaction.personID 
+GROUP BY Person.personID  
+ORDER BY compatibility DESC ,numDates;
+
+Query took 0.0674 sec
+
+
+10.
+SELECT DISTINCT(location)
+FROM Interaction
+WHERE(DATEDIFF(CURRENT_TIMESTAMP,date_time)<31);
+
+Query took 0.0100 sec
+
+11.
+SELECT AVG(compatibility), politics
+FROM Person
+GROUP BY politics;
+
+Query took 0.0164 sec
+
+12.
+SELECT name, compatibility 
+		FROM Person 
+		WHERE religion = 'Atheist' AND politics = 'Other';
+
+Query took 0.0032 sec
+
+13.
+SELECT name, contact_preference
+		FROM Person
+		WHERE personID = 2;
+
+Query took 0.0005 sec
+
+14.
+	SELECT personID 
+		FROM Person 
+		WHERE compatibility <= 5 AND personID NOT IN 
+		    (SELECT Person.personID
+			FROM Person
+			INNER JOIN Interaction ON Person.personID = Interaction.personID
+			WHERE Interaction.impression = 'long-term potential'
+			GROUP BY Person.personID);
+
+Query took 0.4961 sec
+
+15. 
+SELECT Person.name, Interaction.date_time, Interaction.medium, Communication.content
+FROM Person
+INNER JOIN Interaction ON Person.personID = Interaction.personID
+INNER JOIN Communication ON Interaction.interactionID = Communication.interactionID
+WHERE Person.personID =4
+AND Interaction.date_time = ( 
+SELECT MAX( date_time ) 
+FROM Interaction
+WHERE personID =4 )
+
+Query took 0.2098 sec
+
+16.
+	SELECT name, phone
+		FROM Person
+		WHERE personID IN 
+                    (SELECT thisPerson 
+                     FROM (SELECT Person.personID AS thisPerson, MAX(Communication.content) 
+                           FROM Person
+                           INNER JOIN Interaction ON Person.personID = Interaction.personID
+                           INNER JOIN Communication ON Interaction.interactionID = Communication.interactionID
+                           WHERE Communication.content = 'joke' AND Person.politics <> 'Republican'
+                           GROUP BY Person.personID) AS funnyPerson);
+Query took 0.0708 sec
+
+After adding indices:
+
+7. 
+SELECT DISTINCT(name) AS wellknown
+FROM Person 
+WHERE personID IN 
+	(SELECT personID 
+	FROM
+		(SELECT Interaction.personID,COUNT(*) AS intct 
+		FROM Interaction 
+		GROUP BY Interaction.personID)AS datecount 
+	WHERE intct>1 
+	UNION 
+	SELECT personID 
+	FROM
+		(SELECT Info.personID,COUNT(*) AS infct 
+		FROM Info 
+		GROUP BY Info.personID)AS infocount 
+	WHERE infct>1)
+;
+
+Pre indices: Query took 0.2390 sec
+Post indices: Query took 0.1907 sec
+
+14.
+	SELECT personID 
+		FROM Person 
+		WHERE compatibility <= 5 AND personID NOT IN 
+		    (SELECT Person.personID
+			FROM Person
+			INNER JOIN Interaction ON Person.personID = Interaction.personID
+			WHERE Interaction.impression = 'long-term potential'
+			GROUP BY Person.personID);
+
+Pre indices: Query took 0.4961 sec
+Post indices: Query took 0.5130 sec
+
+
+15. 
+SELECT Person.name, Interaction.date_time, Interaction.medium, Communication.content
+FROM Person
+INNER JOIN Interaction ON Person.personID = Interaction.personID
+INNER JOIN Communication ON Interaction.interactionID = Communication.interactionID
+WHERE Person.personID =4
+AND Interaction.date_time = ( 
+SELECT MAX( date_time ) 
+FROM Interaction
+WHERE personID =4 )
+
+Pre indices: Query took 0.2098 sec
+Post indices: Query took 0.0165 sec
+
+

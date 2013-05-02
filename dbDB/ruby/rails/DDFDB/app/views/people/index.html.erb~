@@ -1,0 +1,17 @@
+<%= will_paginate %>
+<ul class="users"> <%= render @people %>  </ul> <%= will_paginate %>
+<div class="container">
+	<div class="row">
+		<div class="span4">
+			<hr>
+			<div class="btn-group">
+				<a href='/people/new'>
+  				<button class="btn">Add New Person</button>
+				<a href='/people/index>
+				<button class="btn">Back</button>
+			</div>
+		</div> <!-- span4 -->
+	</div> <!-- row -->
+</div> <!-- container -->
+
+<br />

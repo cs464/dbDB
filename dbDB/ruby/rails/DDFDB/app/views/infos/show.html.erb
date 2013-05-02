@@ -1,0 +1,19 @@
+<h1>Fact Information</h1>
+<p><strong>Fact ID:</strong> <%= @info.factID %><br />
+<strong>Factoid:</strong> <%= @info.factoid %><br />
+<strong>Associated Person ID: </strong> <%= @info.personID %><br />
+<div style="float:left;">
+<%= button_to "Edit", edit_info_path(@info), :method => :get %>
+</div>
+<div style="float:left;">
+<%= button_to "Delete", @info, :confirm => "Are you sure you want to delete this person?", :method => :delete%>
+</div>
+</p>
+<div style="clear:both;">
+	</div>
+<div class="btn.btn-small">
+	<a href='/infos/'>
+  <button class="btn.btn-small">Back To Facts</button>
+</div>
+
+

@@ -1,0 +1,34 @@
+<!-- Table storing Interaction information from the interactions database -->
+<table border="3" cellpadding="10">
+	<tr>
+		<th>Interaction ID</th>
+		<th>Impression</th>
+		<th>Date/Time</th>
+		<th>Medium</th>
+		<th>Location</th>
+		<th>Associated Person ID</th>
+		<th>Edit/Delete</th>
+	</tr>
+	<td><b><%= link_to interaction.interactionID, interaction_path(interaction)%></b></td>
+	<td><%=interaction.impression%></td>
+	<td><%=interaction.date_time%></td>
+	<td><%=interaction.medium%></td>
+	<td><%=interaction.location%></td>
+	<td><%=interaction.personID%></td>	
+	<td>
+		<!-- Edit Button -->
+		<div style="float:left;">
+			<%= button_to "Edit", edit_interaction_path(interaction), :method => :get %>
+		</div>
+		<!-- Delete Button -->
+		<div style="float:right;">
+			<%= button_to "Delete", interaction, :confirm => "Are you sure you want to delete this interaction?", :method => :delete%>
+		</div> 
+	</td>
+</tr>
+</table>
+
+
+
+
+

@@ -1,0 +1,27 @@
+<!-- View user information -->
+<h1>User Information</h1>
+<br>
+<table border="3" cellpadding="10">
+	<tr>
+		<td><strong>Username: </strong> <%= @user.username %></td>
+	</tr>
+	<tr><td><strong>Password Hash:</strong> <%= @user.password %></td>
+	</tr>
+</table>
+<!-- Edit button -->
+<div style="float:left;">
+	<%= button_to "Edit", edit_user_path(@user), :method => :get %>
+</div>
+<!-- Delete button -->
+<div style="float:left;">
+	<%= button_to "Delete", @user, :confirm => "Are you sure you want to delete this user?", :method => :delete%>
+</div>
+</p>
+<!-- Reset formatting -->
+<div style="clear:both;">
+</div>
+<!-- Back button -->
+<div class="btn.btn-small">
+	<a href='/users/'>
+		<button class="btn.btn-small">Back To Users</button>
+	</div>

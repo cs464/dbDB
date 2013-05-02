@@ -1,0 +1,15 @@
+<!-- Update information for an interest page -->
+<h1>Update Unformation For An Interest</h1>
+<!-- Inputs for the attributes -->
+<%= form_for @interest do |p| %>
+Interest ID: <%= p.text_field :interestID %><br />
+Name of the Interest: <%= p.text_field :name %><br />
+Details: <%= p.text_field :details %><br />
+Person ID Referenced: <%= p.text_field :personID %><br />
+<%= p.submit "Update Interest", :class => "button", :onclick => "alert('Success!')" %>
+<% end -%>
+<!-- Button to go back to the interests main page -->
+<div class="btn-group">
+	<a href='/interests/'>
+  <button class="btn">Back to Interests</button>
+</div>

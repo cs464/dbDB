@@ -1,0 +1,3 @@
+<li>
+	<p>Interaction ID: <%=interaction.interactionID %>, Impression: <%=interaction.interactionID %>, Date Time: <%=interaction.date_time %> Medium: <%=interaction.medium %> Location: <%=interaction.location %> Person ID: <%=interaction.personID %> </p>
+</li>

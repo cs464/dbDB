@@ -1,0 +1,17 @@
+<!-- Update information for an interaction page -->
+<h1>Update Information For An Interaction</h1>
+<!-- Inputs for the attributes -->
+<%= form_for @interaction do |p| %>
+Interaction ID: <%= p.text_field :interactionID %><br />
+Impression: <%= p.text_field :impression %><br />
+Date/Time: <%= p.text_field :date_time %><br />
+Medium: <%= p.text_field :medium %><br />
+Location: <%= p.text_field :location %><br />
+Person ID Referenced: <%= p.text_field :personID %><br />
+<%= p.submit "Update Information For The Person", :class => "button", :onclick => "alert('Success!')" %>
+<% end -%>
+<!-- Button to go back to the interactions main page -->
+<div class="btn-group">
+	<a href='/interactions/'>
+  <button class="btn">Back to Interactions</button>
+</div>
