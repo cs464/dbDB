@@ -1,0 +1,14 @@
+<!-- Update information for Pursuing page-->
+<h1>Update information for Users Targeting People</h1>
+<!-- Inputs for the attributes-->
+<%= form_for @pursuing do |p| %>
+Username: <%= p.text_field : username %><br />
+Person ID: <%= p.text_field :personID %><br />
+<%= p.submit %>
+<% end -%>
+<!--Button to go back to the people main page-->
+<div class="btn-group">
+	<a href='/pursuings/'>
+  <button class="btn">Back</button>
+</div>
+

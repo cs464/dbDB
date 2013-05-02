@@ -1,0 +1,7 @@
+SELECT COUNT(*) FROM User;
+SELECT COUNT(*) FROM Pursuing;
+SELECT COUNT(*) FROM Person;
+SELECT COUNT(*) FROM Info;
+SELECT COUNT(*) FROM Interaction;
+SELECT COUNT(*) FROM Communication;
+SELECT COUNT(*) FROM Interest;

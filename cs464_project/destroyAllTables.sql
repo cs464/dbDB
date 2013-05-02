@@ -1,0 +1,1 @@
+DROP TABLE User, Pursuing, Person, Remember, Info, Had_An, Interaction, Involved, Communication, Has_Interest, Interest

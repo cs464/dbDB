@@ -1,0 +1,16 @@
+<!-- Add a new Fact page-->
+<h1>Add a New Fact</h1>
+<!--Inputs for the attributes-->
+<%= form_for @info do |p| %>
+Factoid:<%= p.text_field :factoid %><br />
+Associated Person ID:<%= p.text_field :personID %><br />
+<!--Create a new pop up button to indicate success -->
+<%= p.submit "Create New Fact", :class => "button", :onclick => "alert('Success!')" %>
+
+<% end -%>
+
+<!--Button to go back to the people main page-->
+<div class="btn.btn-small">
+	<a href='/infos/'>
+  <button class="btn.btn-small">Back To Facts</button>
+

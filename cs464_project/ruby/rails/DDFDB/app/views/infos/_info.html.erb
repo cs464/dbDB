@@ -1,0 +1,21 @@
+<!-- Table storing Fact information from the Info table-->
+<table border="3" cellpadding="10">
+	<tr>
+		<td><b><%= link_to info.factID, info_path(info)%></b></td>
+		<td><%=info.factoid %></td>
+		<td><%=info.personID %></td>
+
+		<td>
+		  <!--Edit Button-->
+		<div style="float:left;">
+		<%= button_to "Edit", edit_info_path(info), :method => :get %>
+	</div>
+		<!--Delete Button-->
+	<div style="float:right;">
+		<%= button_to "Delete", info, :confirm => "Are you sure you want to delete this fact?", :method => :delete%>
+	</div> 
+</td>
+</tr>
+</table>
+
+

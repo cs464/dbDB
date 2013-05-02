@@ -1,0 +1,12 @@
+<h1>Update Facts</h1>
+
+<%= form_for @info do |p| %>
+Factoid: <%= p.text_field :factoid %><br />
+Associated Person ID: <%= p.text_field :personID %><br />
+<%= p.submit "Update Information For The Fact", :class => "button", :onclick => "alert('Success!')" %>
+<% end -%>
+<div class="btn-group">
+	<a href='/infos/'>
+  <button class="btn">Back to Facts</button>
+</div>
+

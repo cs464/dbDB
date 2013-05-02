@@ -1,0 +1,6 @@
+1. Type 'sudo -s'
+
+2. Type 'bash createTablesForProject.sh' to create all of our tables, and make sure you change the user name in the file -- you can do this with a text editor. 
+
+3. Type 'bash destroyAll.sh' to delete all of the tables in our database. Really think about this before doing it, as it could be really shitty if it was on accident.
+
