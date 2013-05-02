@@ -1,0 +1,6 @@
+#!/usr/bin/ruby
+begin
+  require "mysql"
+rescue LoadError
+  # not installed
+end

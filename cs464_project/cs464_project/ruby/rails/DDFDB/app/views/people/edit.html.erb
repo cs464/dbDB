@@ -1,0 +1,20 @@
+<!-- Update information for person page -->
+<h1>Update Information For a Person</h1>
+<!-- Inputs for the attributes -->
+<%= form_for @person do |p| %>
+Name: <%= p.text_field :name %><br />
+Gender: <%= p.text_field :gender %><br />
+Email: <%= p.text_field :email %><br />
+Phone: <%= p.text_field :phone %><br />
+Contact Preference: <%= p.text_field :contact_preference %><br />
+Religion: <%= p.text_field :religion %><br />
+Politics:<%= p.text_field :politics %><br />
+DOB: <%= p.text_field :dob %><br />
+Compatibility Rating: <%= p.text_field :compatibility %><br />
+<%= p.submit "Update Information For The Person", :class => "button", :onclick => "alert('Success!')" %>
+<% end -%>
+<!-- Button to go back to the people main page -->
+<div class="btn-group">
+	<a href='/people/'>
+  <button class="btn">Back to People</button>
+</div>

@@ -1,0 +1,14 @@
+<!-- Add new interest page -->
+<h1>Add a New Interest</h1>
+<!-- Inputs for the attributes -->
+<%= form_for @interest do |p| %>
+Name of Interest:<%= p.text_field :name %><br />
+Details of Interest:<%= p.text_field :details %><br />
+PersonID:<%= p.text_field :personID %><br />
+<!-- Create new interest pop up button to indicate success -->
+<%= p.submit "Create New Interest", :class => "button", :onclick => "alert('Success!')" %>
+<% end -%>
+<!-- Button to go back to the interest main page -->
+<div class="btn.btn-small">
+	<a href='/interests/'>
+		<button class="btn.btn-small">Back To Interests</button>

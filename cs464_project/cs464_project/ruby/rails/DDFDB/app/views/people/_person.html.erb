@@ -1,0 +1,36 @@
+<!-- Table storing People information from the people database -->
+<table border="3" cellpadding="7" width="1200px">
+  <tr><th>Person ID</th>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Contact Preference</th>
+    <th>Religion</th>
+    <th>Politics</th>
+    <th>Date of Birth</th>
+    <th>Compatibility</th>
+    <th>Edit/Delete</th>
+  </tr>
+  <td><b><%= link_to person.personID, person_path(person)%></b></td>
+  <td><%=person.name %></td> 
+  <td><%=person.gender %></td>
+  <td><%=person.email %></td>
+  <td><%=person.phone %></td>
+  <td><%=person.contact_preference %></td>
+  <td><%=person.religion %></td>
+  <td><%=person.politics %></td>
+  <td><%=person.dob %></td>
+  <td><%=person.compatibility %></td>
+  <td>
+    <!-- Delete Button -->
+    <div style="float:right;">
+      <%= button_to "Delete", person, :confirm => "Are you sure you want to delete this person?", :method => :delete%>
+    </div> 
+      <!-- Edit Button -->
+    <div style="float:right;">
+      <%= button_to "Edit", edit_person_path(person), :method => :get %>
+    </div>
+</table>
+
+

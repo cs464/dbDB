@@ -1,0 +1,23 @@
+<!-- Table storing Communications information from the communication database -->
+<table border="3" cellpadding="7" width="800px">
+  <tr><th>Communication ID</th>
+    <th>Content</th>
+    <th>Theme</th>
+    <th>Edit/Delete</th>
+  </tr>
+  <td><b><%= link_to communication.communicationID, communication_path(communication)%></b></td>
+  <td><%=communication.content %></td> 
+  <td><%=communication.theme %></td>
+  <td>
+     <!-- Delete Button -->
+    <div style="float:right;">
+      <%= button_to "Delete", communication, :confirm => "Are you sure you want to delete this communication?", :method => :delete%>
+    </div> 
+    <!-- Edit Button -->
+    <div style="float:right;">
+      <%= button_to "Edit", edit_communication_path(communication), :method => :get %>
+    </div>
+</table>
+
+
+

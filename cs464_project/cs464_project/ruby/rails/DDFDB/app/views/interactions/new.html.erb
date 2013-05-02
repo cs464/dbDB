@@ -1,0 +1,16 @@
+<!-- Add new interaction page -->
+<h1>Add a New Interaction</h1>
+<!-- Inputs for the attributes -->
+<%= form_for @interaction do |p| %>
+Impression:<%= p.text_field :impression %><br />
+Date/Time(yyyy-mm-dd h/m/s Timezone):<%= p.text_field :date_time %><br />
+Medium:<%= p.text_field :medium %><br />
+Location:<%= p.text_field :location %><br />
+PersonID:<%= p.text_field :personID %><br />
+<!-- Create new interaction pop up button to indicate success -->
+<%= p.submit "Create New Interaction", :class => "button", :onclick => "alert('Success!')" %>
+<% end -%>
+<!-- Button to go back to the interaction main page -->
+<div class="btn.btn-small">
+	<a href='/interactions/'>
+		<button class="btn.btn-small">Back To Interactions</button>

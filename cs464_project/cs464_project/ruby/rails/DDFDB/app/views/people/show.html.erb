@@ -1,0 +1,46 @@
+<!-- View target profile -->
+<h1>Target Profile</h1>
+<br>
+<table border="3" cellpadding="10">
+	<tr>
+		<td><strong>Person ID: </strong> <%= @person.personID %></td>
+	</tr>
+	<tr><td><strong>Name:</strong> <%= @person.name %></td>
+	</tr>
+	<tr><td><strong>Gender:</strong> <%= @person.gender %></td>
+	</tr>
+	<tr><td><strong>Email:</strong> <%= @person.email %></td>
+	</tr>
+	<tr><td><strong>Phone Number:</strong> <%=@person.phone %></td>
+	</tr>
+	<tr><td><strong>Contact Preference:</strong> <%=@person.contact_preference %></td>
+	</tr>
+	<tr><td><strong>Religion:</strong> <%=@person.religion %></td>
+	</tr>
+	<tr><td><strong>Politics:</strong> <%=@person.politics %></td>
+	</tr>
+	<tr><td><strong>Date of Birth:</strong> <%=@person.dob %></td>
+	</tr>
+	<tr><td><strong>Compatiblity:</strong> <%=@person.compatibility %></td>
+	</tr>
+</table>
+<!-- Edit button -->
+<div style="float:left;">
+	<%= button_to "Edit", edit_person_path(@person), :method => :get %>
+</div>
+<!-- Delete button -->
+<div style="float:left;">
+	<%= button_to "Delete", @person, :confirm => "Are you sure you want to delete this person?", :method => :delete%>
+</div>
+</p>
+<!-- Reset formatting -->
+<div style="clear:both;">
+</div>
+<!-- Back button -->
+<div class="btn.btn-small">
+	<a href='/people/'>
+		<button class="btn.btn-small">Back To People</button>
+	</div>
+
+
+

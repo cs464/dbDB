@@ -1,0 +1,97 @@
+Type bash selectData.sh to run this properly.
+username	password_hash
+aaron2944	b735f9232d25bda7060001d4eaac87a9546ca299
+aaron3334	6b0f76ddc1cc20341fc9e035ddb9835b9078bf6d
+aaron3446	d1fd1feb08bb410e8278e412f1e04f863bfa9881
+aaron3913	67e442dc0184ad5a687945f6d7902c76bd72fad6
+aaron4047	4538bd88877a04be3400781728f69c3f87426424
+aaron4236	7a74c454b5bd362c2e4c47ce80f652b424ec09f9
+aaron4335	12cba19e3f47a456a488be5734f662789d64c5eb
+aaron4656	37acad230669c56788f3a93fea70962a226dae65
+aaron4781	85f762b9d5d8ca305b0b2cb0e412fcc1e69c6e46
+aaron4937	0a3713cb26442ee535f281615d7315790ea504bc
+aaron5140	ad4290d1eefbc6c55577e8a967465fd4480e6407
+aaron5255	a66f6ac9202c91346b871882ff8822abce5ccc4c
+aaron597	e3103de1d16898d919f1d106c2b256c93aadab2a
+aaron6170	7e029dbd2e7719e07c7eebb31854b6b12ce436c9
+aaron6195	4544e8e1f647b5cd7947925a4be01bba3278ea21
+personID	name	gender	email	phone	contact_preference	religion	politics	dob	compatibility
+11	Krystle Cagle	f	KrystleC@yahoo.com	909-621-2164	email	Scientologist	Green	1969-12-01	10
+12	Shila Cummins	f	ShilaC@unm.edu	909-626-5491	text	Pagan	Independent	1973-08-19	5
+13	Lisabeth Woodall	f	LisabethW@me.com	505-604-5919	email	Pagan	Green	1948-11-13	3
+14	Shanti Gunter	f	ShantiG@cs.unm.edu	213-943-7350	email	Agnostic	Apathetic	1968-06-17	4
+15	Ellamae Berrios	f	EllamaeB@yahoo.com	212-403-5894	email	Buddhist	Republican	1970-08-03	1
+16	Virgie Lynn	f	VirgieL@yahoo.com	813-593-4607	email	Protestant	Republican	1970-09-04	10
+17	Clyde Schilling	f	ClydeS@cs.unm.edu	813-624-710	email	Other	Green	1950-11-06	7
+18	Sandy Daley	f	SandyD@unm.edu	212-559-3131	phone	Sikh	Other	1959-08-20	10
+19	Livia Pinkston	f	LiviaP@gmail.com	949-522-4624	phone	Other	Apathetic	1956-12-18	10
+20	Denita Rockwell	f	DenitaR@me.com	949-439-5447	phone	Christian	Other	1950-09-06	0
+21	Keena Mangum	f	KeenaM@unm.edu	813-529-9657	text	Catholic	Republican	1969-12-11	0
+22	Twila Wolford	f	TwilaW@unm.edu	505-287-6344	phone	Atheist	Apathetic	1941-05-15	7
+23	Shalon Lombardo	f	ShalonL@hotmail.com	213-644-2122	phone	Jewish	Libertarian	1951-07-08	1
+24	Jerica Gandy	f	JericaG@unm.edu	213-559-8038	text	Other	Independent	1979-07-02	5
+25	Lahoma Glover	f	LahomaG@yahoo.com	213-222-4381	email	Atheist	Democrat	1949-04-07	6
+factID	factoid	personID
+11	 A raisin dropped in a glass of fresh champagne will bounce up and down continuously from the bottom of the glass to the top.\n	5250
+12	 Benjamin Franklin was the fifth in a series of the youngest son of the youngest son.\n	4098
+13	Triskaidekaphobia means fear of the number 13. Paraskevidekatriaphobia means fear of Friday the 13th (which occurs one to three times a year). In Italy, 17 is considered an unlucky number. In Japan, 4 is considered an unlucky number.\n	6540
+14	 A female ferret will die if it goes into heat and cannot find a mate.\n	6849
+15	 All the chemicals in a human body combined are worth about 6.25 euro (if sold separately).\n	8348
+16	 In ancient Rome, when a man testified in court he would swear on his testicles.\n	6293
+17	 The ZIP in ZIP code means Zoning Improvement Plan.\n	2512
+18	 Coca-Cola contained Coca (whose active ingredient is cocaine) from 1885 to 1903.\n	6914
+19	 A 2 by 4 is really 1 1/2 by 3 1/2.\n	5005
+20	 Its estimated that at any one time around 0.7% of the worlds population is drunk.\n	2596
+21	 Each king in a deck of playing cards represents a great king from history: Spades = David ; Clubs = Alexander the Great ; Hearts = Charlemagne ; Diamonds = Caesar\n	5342
+22	 40% of McDonalds profits come from the sales of Happy Meals.\n	5872
+23	 Every person, including identical twins, has a unique eye and tongue print along with their finger print.\n	6416
+24	 The spot on the 7-Up logo comes from its inventor who had red eyes. He was an albino.\n	8581
+25	 315 entries in Websters 1996 dictionary were misspelled.\n	5935
+interactionID	impression	date_time	medium	location	personID
+11	crazy	2012-03-31 03:14:26	social network	restaurant	NULL
+12	long-term potential	2012-12-12 06:11:50	social network	transit	NULL
+13	playing games	2012-11-26 17:14:36	phone call	restaurant	NULL
+14	loves me	2012-01-14 01:33:42	phone call	coffee shop	NULL
+15	long-term potential	2012-08-30 21:14:13	in person	campus	NULL
+16	long-term potential	2012-10-02 02:48:03	social network	campus	NULL
+17	boring	2012-01-13 02:51:25	texting	bar	NULL
+18	crazy	2013-01-04 02:52:41	texting	apartment	NULL
+19	need to take things slow	2012-10-19 11:02:11	phone call	transit	NULL
+20	boring	2012-04-10 18:50:12	social network	apartment	NULL
+21	dislikes me	2012-02-14 09:55:47	in person	campus	NULL
+22	flirtatious	2012-06-13 13:16:28	texting	bar	NULL
+23	loves me	2013-03-21 10:33:59	in person	restaurant	NULL
+24	flirtatious	2012-05-29 08:53:50	phone call	coffee shop	NULL
+25	playing games	2013-01-14 20:44:50	in person	transit	NULL
+communicationID	content	theme	interactionID
+10012	comment	totally unique and fascinating message 10	3452
+10013	tease	totally unique and fascinating message 11	6500
+10014	joke	totally unique and fascinating message 12	2607
+10015	sexual	totally unique and fascinating message 13	223
+10016	question	totally unique and fascinating message 14	5545
+10017	joke	totally unique and fascinating message 15	6342
+10018	tease	totally unique and fascinating message 16	8794
+10019	sexual	totally unique and fascinating message 17	6633
+10020	personal	totally unique and fascinating message 18	409
+10021	question	totally unique and fascinating message 19	9687
+10022	story	totally unique and fascinating message 20	2989
+10023	story	totally unique and fascinating message 21	1516
+10024	story	totally unique and fascinating message 22	5482
+10025	comment	totally unique and fascinating message 23	7485
+10026	tease	totally unique and fascinating message 24	7629
+interestID	name	details	personID
+11	Traveling	Likes to see the world	2560
+12	Photography	Point a machine at things and press a button for a memory	7390
+13	Building computers and robots	Likes to fuel the inevitable robot takeover	7007
+14	Skiing	Likes to travel over snow and ice as quickly as possible when going downhill	7475
+15	Jewelry-making	Probably is a hippie	397
+16	Meditation	A disciplined way of zoning out	5434
+17	Landscape gardening	Enjoys making their house look asthetically pleasing from the outside	9165
+18	Scrapbooking	Likes to make books full of random stuff	8696
+19	Fishing	Likes to get drunk on a boat and fall asleep	3043
+20	Making birdfeeders/birdhouses	Really likes birds.. A lot. Or likes their cat(s) to stay busy	6583
+21	Ice skating	Likes to traverse flat icy surfaces and does not mind risking the loss of a finger	230
+22	Stargazing	Similar to cloud watching -- except way cooler	1826
+23	Making artifacts from used materials	Likes to bury things that people in the future might use to determine how quaint we were	3269
+24	Dancing/choreographing	Likes to pretend they are in West Side Story	4288
+25	Boating	Your date is probably an awesome hacker in disguise, like Moxie Marlinspike	8583

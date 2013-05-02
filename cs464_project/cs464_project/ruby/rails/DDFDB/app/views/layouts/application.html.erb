@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--Static navigation bar that remains on top of every page-->
+<html>
+<head>
+  <title>DDFBP</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<!--Links to focus on a specific table-->
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">The DDFBP <b>Administrative Console</b></a>
+      <ul class="nav">
+        <li><a href="/people/">People</a></li>
+        <li><a href="/pursuings/">Pursuing</a></li>
+        <li><a href="/communications/">Communication</a></li>
+        <li><a href="/infos/">Info</a></li>
+        <li><a href="/interactions/">Interactions</a></li>
+        <li><a href="/interests/">Interests</a></li>
+        <li><a href="/users/">Users</a></li>
+      </ul>
+    </ul>
+  </div>
+</div>
+
+
+<%= yield %>
+
+</body>
+</html>

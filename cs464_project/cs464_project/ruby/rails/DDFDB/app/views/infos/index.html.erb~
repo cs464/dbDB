@@ -1,0 +1,15 @@
+	<%= will_paginate %>
+	<ul class="users"> <%= render @infos %>  </ul> <%= will_paginate %>
+	<div class="container">
+		<div class="row">
+			<div class="span4">
+				<hr>
+				<div class="btn-group">
+					<a href='/infos/new'>
+						<button class="btn">Add New Fact</button>
+					</div>
+				</div> <!-- span4 -->
+			</div> <!-- row -->
+		</div> <!-- container -->
+
+		<br />

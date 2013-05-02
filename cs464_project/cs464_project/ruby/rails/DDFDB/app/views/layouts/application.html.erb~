@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DDFDB</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">The DDFDB <b>Administrative Console</b></a>
+      <ul class="nav">
+        <li><a href="/people/">People</a></li>
+        <li><a href="/pursuings/">Pursuing</a></li>
+        <li><a href="/communications/">Communication</a></li>
+        <li><a href="/infos/">Info</a></li>
+        <li><a href="/interactions/">Interactions</a></li>
+        <li><a href="/interests/">Interests</a></li>
+        <li><a href="/users/">Users</a></li>
+      </ul>
+    </ul>
+  </div>
+</div>
+
+
+
+<%= yield %>
+
+</body>
+</html>

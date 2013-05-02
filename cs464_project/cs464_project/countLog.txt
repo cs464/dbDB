@@ -1,0 +1,15 @@
+Type bash selectData.sh to run this properly.
+COUNT(*)
+10001
+COUNT(*)
+10001
+COUNT(*)
+10000
+COUNT(*)
+10000
+COUNT(*)
+10001
+COUNT(*)
+10001
+COUNT(*)
+10001

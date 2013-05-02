@@ -1,0 +1,45 @@
+		class PeopleController < ApplicationController
+			def index
+				@people = Person.paginate(:page => params[:page], :per_page => 10)
+			end
+
+			def groupby
+				@persongroup = Person.select('name, count(*) as n_users').group('name').having('n_users>1')
+			end
+
+			def new
+				@person = Person.new
+			end
+
+			def create
+				@person = Person.new(params[:person])
+				if @person.save
+					redirect_to people_path
+				else
+					redirect_to new_person_path
+				end
+			end
+
+			def edit
+				@person = Person.find(params[:id])
+			end
+
+			def show
+				@person = Person.find(params[:id])
+			end
+			
+			def update
+				@person = Person.find(params[:id])
+				if @person.update_attributes(params[:person])
+					redirect_to people_path
+				else
+					redirect_to :action => 'edit', :id => @person.id
+				end
+			end
+
+			def destroy
+				@person = Person.find(params[:id])
+				@person.destroy
+				redirect_to people_path
+			end
+		end

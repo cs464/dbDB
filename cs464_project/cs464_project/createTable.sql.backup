@@ -1,0 +1,73 @@
+CREATE TABLE users (
+username varchar(128) NOT NULL,
+password_hash varchar(256) NOT NULL,
+PRIMARY KEY(username));
+
+CREATE TABLE pursuings (
+username varchar(128) NOT NULL REFERENCES User(username),
+personID int NOT NULL  REFERENCES  Person(personID)
+);
+
+CREATE TABLE people(
+personID int(15) NOT NULL AUTO_INCREMENT,
+name varchar(128) NOT NULL,
+gender ENUM('m','f') NOT NULL,
+email varchar(128),
+phone varchar(128),
+contact_preference ENUM('text', 'phone','email'),
+religion ENUM('Christian', 'Jewish', 'Muslim', 'Scientologist', 'Atheist', 'Other', 'Agnostic', 'Catholic', 'Protestant', 'Pagan','Hindu',
+'Buddhist','Sikh','Rastafarian'),
+politics ENUM('Democrat', 'Republican', 'Libertarian', 'Apathetic', 'Independent','Green','Other'),
+dob DATE,
+compatibility int,
+PRIMARY KEY(personID)
+);
+
+CREATE TABLE Remember(
+personID int(15) REFERENCES Person(personID),
+factID int(15) REFERENCES Info(factID)
+);
+
+CREATE TABLE Info(
+factID int(15) NOT NULL AUTO_INCREMENT,
+factoid varchar(256),
+PRIMARY KEY(factID)
+);
+
+CREATE TABLE Had_An(
+personID int(15) REFERENCES Person(personID),
+interactionID int(15) REFERENCES Interaction(interactionID)
+);
+
+CREATE TABLE interactions(
+interactionID int(15) NOT NULL AUTO_INCREMENT,
+impression varchar(128),
+date_time DATETIME NOT NULL,
+medium varchar(128),
+location varchar(128),
+PRIMARY KEY(interactionID)
+);
+
+CREATE TABLE Involved(
+interactionID int(15) REFERENCES Interaction(interactionID),
+communicationID int(15) REFERENCES Communication(communicationID)
+);
+
+CREATE TABLE Communication(
+communicationID int(15) NOT NULL AUTO_INCREMENT,
+content varchar(128),
+theme varchar(64),
+PRIMARY KEY(communicationID)
+);
+
+CREATE TABLE Has_Interest(
+personID int(15) REFERENCES Person(personID),
+interestID int(15) REFERENCES Interest(interestID)
+);
+
+CREATE TABLE interests(
+interestID int(15) NOT NULL AUTO_INCREMENT,
+name varchar(128) NOT NULL,
+details varchar(256) NOT NULL,
+PRIMARY KEY(interestID)
+);
